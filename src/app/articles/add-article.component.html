@@ -1,0 +1,18 @@
+<div class="add-article-container">
+    <h2>Adaugă articol</h2>
+  
+    <form (ngSubmit)="addArticle()" #form="ngForm">
+      <label for="title">Titlu:</label>
+      <input type="text" id="title" [(ngModel)]="title" name="title" required>
+  
+      <label for="content">Conținut:</label>
+      <textarea id="content" [(ngModel)]="content" name="content" required></textarea>
+  
+      <label for="imageUrl">URL imagine (opțional):</label>
+      <input type="text" id="imageUrl" [(ngModel)]="imageUrl" name="imageUrl">
+  
+      <button type="submit">Publică</button>
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </div>
+  

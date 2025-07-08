@@ -1,0 +1,18 @@
+<h2>Post a News Article</h2>
+
+<form (ngSubmit)="postArticle()">
+  <label>Title:</label>
+  <input type="text" [(ngModel)]="title" name="title" required />
+
+  <label>Content:</label>
+  <textarea [(ngModel)]="content" name="content" required></textarea>
+
+  <label>Image:</label>
+  <input type="file" (change)="onFileChange($event)" accept="image/*" required />
+
+  <button type="submit">Post Article</button>
+
+  <a routerLink="/add-article">➕ Adaugă articol</a>
+
+  <p *ngIf="message" style="margin-top: 1rem; color: green;">{{ message }}</p>
+</form>

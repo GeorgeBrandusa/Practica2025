@@ -1,0 +1,19 @@
+<div class="auth-container">
+  <h2>Login</h2>
+
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  <div class="switch-auth">
+    <p>Nu ai cont? <a routerLink="/register">Înregistrează-te</a></p>
+  </div>
+</div>

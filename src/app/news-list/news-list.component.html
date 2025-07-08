@@ -1,0 +1,26 @@
+<h2>News Articles</h2>
+
+<div *ngIf="articles$ | async as articles; else loading">
+  <div *ngIf="articles.length > 0; else noArticles">
+    <div *ngFor="let article of articles" class="article">
+      <img [src]="article.imageUrl" alt="{{ article.title }}" />
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.content }}</p>
+      <small *ngIf="article.timestamp">{{ article.timestamp.toDate() | date:'medium' }}</small>
+
+      <a *ngIf="(authService.userRole$ | async) === 'admin'" 
+        [routerLink]="['/edit-article', article.id]">
+        ✏️ Editează
+      </a>
+      <hr />
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading articles...</p>
+</ng-template>
+
+<ng-template #noArticles>
+  <p>No articles found.</p>
+</ng-template>

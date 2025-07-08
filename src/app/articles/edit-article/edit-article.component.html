@@ -1,0 +1,16 @@
+<div class="edit-article-container">
+    <h2>Editează Articol</h2>
+  
+    <form (ngSubmit)="saveChanges()" *ngIf="articleId">
+      <label for="title">Titlu:</label>
+      <input type="text" id="title" [(ngModel)]="title" name="title" required />
+  
+      <label for="content">Conținut:</label>
+      <textarea id="content" [(ngModel)]="content" name="content" rows="8" required></textarea>
+  
+      <button type="submit">Salvează modificările</button>
+    </form>
+  
+    <p class="status-message" *ngIf="message">{{ message }}</p>
+  </div>
+  
