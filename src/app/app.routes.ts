@@ -5,6 +5,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { NewsListComponent } from './news-list/news-list.component';
 
 export const routes: Routes = [
+ // { path: 'my-events', component: MyEventsComponent }
+ //{ path: 'create-event', component: CreateEventComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

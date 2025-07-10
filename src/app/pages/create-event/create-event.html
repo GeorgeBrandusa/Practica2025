@@ -1,0 +1,13 @@
+<h2>Create Event</h2>
+<form (ngSubmit)="submit()" #eventForm="ngForm">
+  <input type="text" [(ngModel)]="event.title" name="title" placeholder="Title" required>
+  <textarea [(ngModel)]="event.description" name="description" placeholder="Description" required></textarea>
+  <input type="datetime-local" [(ngModel)]="event.date" name="date" required>
+
+  <label>Categories:</label>
+  <div *ngFor="let cat of allCategories">
+    <input type="checkbox" [value]="cat" (change)="toggleCategory(cat, $event)" /> {{ cat }}
+  </div>
+
+  <button type="submit">Create Event</button>
+</form>

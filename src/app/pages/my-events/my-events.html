@@ -1,0 +1,7 @@
+<h2>Evenimentele Mele</h2>
+<div *ngIf="events.length === 0">Nu ai creat niciun eveniment.</div>
+<ul>
+  <li *ngFor="let event of events">
+    <strong>{{ event.title }}</strong> - {{ event.date | date }} @ {{ event.location }}
+  </li>
+</ul>
